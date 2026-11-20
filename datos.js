@@ -1,9 +1,8 @@
 // =====================================================================
 //  DATOS DEL LOCAL · Mito Parrillada y Pizzería (demo)
-//  Carta y precios DE EJEMPLO hasta tener la carta real.
-//  Platos sacados de lo que mencionan las reseñas de Google.
+//  Carta real (capturas de PedidosYa, 20/11/2026). Fotos ilustrativas.
 // =====================================================================
-const U = (id, w=900) => id.startsWith("photo-") ? `https://images.unsplash.com/${id}?w=${w}&q=75&auto=format&fit=crop` : id;
+const U = (id, w=700) => id.startsWith("photo-") ? `https://images.unsplash.com/${id}?w=${w}&q=75&auto=format&fit=crop` : id;
 
 window.DATOS = {
   tipo: "pedidos",
@@ -11,7 +10,7 @@ window.DATOS = {
   rubro: "Parrillada y pizzería",
   barrio: "Buceo",
   logo: "M",
-  demo: "Demo · carta, precios y fotos de ejemplo",
+  demo: "Demo · fotos ilustrativas",
 
   textos: { reservarLargo: "Reservar mesa" },
 
@@ -34,53 +33,76 @@ window.DATOS = {
 
   portada: {
     titulo: "Mito",
-    lema: ["Milanesas, pizza", "y parrilla"],
+    lema: ["Pizzetas, milas", "y chivitos"],
     foto: U("photo-1599921841143-819065a55cc6", 1800),
-    destacados: ["Mila napolitana", "Muzzarella", "Postre Oreo"],
-    nota: { valor: "5.0", texto: "estrellas en Google", plato: "Mila napolitana" },
+    destacados: ["Napolitana", "Bondiola y rúcula", "Chivito canadiense al pan"],
+    nota: { valor: "5.0", texto: "estrellas en Google", plato: "Napolitana" },
   },
 
   insignia: { valor: "5.0", texto: "estrellas en Google" },
   presentacion: {
     numero: "#01",
     titulo: "Comida de barrio en el Buceo",
-    texto: "Milanesas de porción grande, pizza, fainá y postres caseros. La parrilla llega muy pronto.",
+    texto: "Pizzetas especiales, milanesas de porción grande, chivitos y papas. Pedí por WhatsApp o vení al local. La parrilla llega muy pronto.",
   },
   carrusel: [
-    { plato: "Mila napolitana", palabras: ["Milanesas", "de", "porción", "grande"] },
-    { plato: "Muzzarella", palabras: ["Pizza", "y", "fainá", "calentitas"] },
-    { plato: "Postre Oreo", palabras: ["El", "postre", "que", "piden"] },
+    { plato: "Napolitana", palabras: ["Milanesas", "de", "porción", "grande"] },
+    { plato: "Bondiola y rúcula", palabras: ["Pizzetas", "de", "la", "casa"] },
+    { plato: "Chivito canadiense al pan", palabras: ["Chivitos", "bien", "completos", "siempre"] },
   ],
 
   cartaTitulo: ["Lo que sale", "de la cocina"],
   gustos: [],
   carta: [
+    { cat: "Pizzetas", items: [
+      { n: "Pizzeta con muzza", d: "", p: 420, foto: U("photo-1785065316016-ff23cea187b1") },
+      { n: "Caprese", d: "Pizzeta especial.", p: 490, foto: U("photo-1590947132387-155cc02f3212") },
+      { n: "Con papas fritas", d: "Pizzeta especial.", p: 590, foto: U("photo-1565299624946-b28f40a0ae38") },
+      { n: "Panceta y cheddar", d: "Pizzeta especial.", p: 590, foto: U("photo-1628840042765-356cda07504e") },
+      { n: "Cuatro quesos", d: "Pizzeta especial.", p: 630, foto: U("photo-1513104890138-7c749659a591") },
+      { n: "Bondiola y rúcula", d: "Pizzeta especial.", p: 630, foto: U("photo-1593560708920-61dd98c46a4e") },
+      { n: "Roquefort y cebolla caramelizada", d: "Pizzeta especial.", p: 630, foto: U("photo-1604382354936-07c5d9983bd3") },
+      { n: "Fugazzeta", d: "Pizzeta especial.", p: 470, foto: U("photo-1655673654158-9f7285b7d1ea") },
+      { n: "Gusto extra (c/u)", d: "Jamón, morrón, aceitunas, panceta, huevo duro o huevo frito.", p: 60 },
+    ]},
+    { cat: "Porciones", items: [
+      { n: "Porción de pizza", d: "", p: 220, foto: U("photo-1628840042765-356cda07504e") },
+      { n: "Porción de muzza", d: "", p: 280, foto: U("photo-1513104890138-7c749659a591") },
+    ]},
     { cat: "Milanesas", items: [
-      { n: "Milanesa con fritas", d: "Carne o pollo, con papas fritas.", p: 420, foto: U("photo-1599921841143-819065a55cc6", 700) },
-      { n: "Mila napolitana", d: "Jamón, mozzarella y salsa, con fritas.", p: 540, foto: U("photo-1560611588-163f295eb145", 700) },
-      { n: "Mila a caballo", d: "Con dos huevos fritos y fritas.", p: 480, foto: U("photo-1599921841143-819065a55cc6", 700) },
-      { n: "Mila al pan", d: "Lechuga, tomate y mayonesa.", p: 380, foto: U("photo-1667451417729-73e944a796a9", 700) },
+      { n: "Milanesa al plato", d: "Incluye guarnición.", p: 490, foto: U("photo-1599921841143-819065a55cc6") },
+      { n: "Mila con panceta y cheddar", d: "Incluye guarnición.", p: 560, foto: U("photo-1585325701956-60dd9c8553bc") },
+      { n: "Napolitana", d: "Cubierta de salsa de tomate, jamón y mozzarella. Incluye guarnición.", p: 560, foto: U("photo-1560611588-163f295eb145") },
+      { n: "Napolitana para dos", d: "Incluye guarnición.", p: 990, foto: U("photo-1560611588-163f295eb145") },
     ]},
-    { cat: "Pizzas", items: [
-      { n: "Muzzarella", d: "Salsa casera, mozzarella y aceitunas.", p: 450, foto: U("photo-1785065316016-ff23cea187b1", 700) },
-      { n: "Napolitana", d: "Tomate, ajo y orégano.", p: 520, foto: U("photo-1628840042765-356cda07504e", 700) },
-      { n: "Especial", d: "Jamón, morrón y aceitunas.", p: 560, foto: U("photo-1700760934249-93efbb574d23", 700) },
-      { n: "Fainá", d: "La porción, bien finita.", p: 120 },
+    { cat: "Chivitos", items: [
+      { n: "Chivito al plato con fritas", d: "", p: 400, foto: U("photo-1599921841143-819065a55cc6") },
+      { n: "Chivito al pan", d: "Churrasco de carne, lechuga, tomate, jamón, mozzarella y huevo frito.", p: 390, foto: U("photo-1667451417729-73e944a796a9") },
+      { n: "Chivito canadiense al pan", d: "Churrasco de carne, lechuga, tomate, jamón, mozzarella, huevo frito, panceta, cebolla, morrón y aceitunas.", p: 530, foto: U("photo-1667451417729-73e944a796a9") },
+      { n: "Chivito cheddar", d: "Churrasco de carne, lechuga, tomate, jamón, huevo frito, panceta, cebolla y cheddar.", p: 530, foto: U("photo-1667451417729-73e944a796a9") },
     ]},
-    { cat: "Guarniciones", items: [
-      { n: "Papas fritas", d: "Porción para compartir.", p: 260, foto: U("photo-1630384060421-cb20d0e0649d", 700) },
-      { n: "Boniatos", d: "Porción.", p: 260 },
+    { cat: "Papas y boniatos", items: [
+      { n: "Gramajo", d: "", p: 490 },
+      { n: "Papas fritas", d: "", p: 220, foto: U("photo-1630384060421-cb20d0e0649d") },
+      { n: "Boniatos fritos", d: "", p: 290 },
+      { n: "Papa al plomo", d: "", p: 200 },
+      { n: "Boniato al plomo", d: "", p: 200 },
+      { n: "Puré de papa casero", d: "", p: 220 },
     ]},
-    { cat: "Postres", items: [
-      { n: "Postre Oreo", d: "Casero.", p: 220 },
+    { cat: "Refrescos y agua", items: [
+      { n: "Refresco línea Coca-Cola 600 ml", d: "", p: 130 },
+      { n: "Refresco línea Coca-Cola 1,5 L", d: "", p: 240 },
+      { n: "Refresco línea Coca-Cola botella de vidrio 1 L", d: "", p: 260 },
+      { n: "Agua Salus 600 ml", d: "", p: 120 },
+      { n: "Agua Salus 1,5 L", d: "", p: 240 },
+      { n: "Frutté 600 ml", d: "", p: 130 },
+      { n: "Monster", d: "", p: 130 },
     ]},
-    { cat: "Parrilla", items: [
-      { n: "Parrilla", d: "¡Muy pronto! Preguntanos por la fecha de apertura.", p: null },
-    ]},
-    { cat: "Bebidas", items: [
-      { n: "Refresco", d: "", p: 180 },
-      { n: "Cerveza", d: "", p: 260, foto: U("photo-1608270586620-248524c67de9", 700) },
-      { n: "Agua", d: "", p: 90 },
+    { cat: "Cervezas", items: [
+      { n: "Cerveza en lata", d: "Zillertal o Patagonia.", p: 190, foto: U("photo-1608270586620-248524c67de9") },
+      { n: "Patricia 1 L", d: "", p: 250, foto: U("photo-1608270586620-248524c67de9") },
+      { n: "Zillertal 1 L", d: "", p: 300, foto: U("photo-1608270586620-248524c67de9") },
+      { n: "Stella Artois 1 L", d: "", p: 300, foto: U("photo-1608270586620-248524c67de9") },
     ]},
   ],
 
@@ -88,8 +110,8 @@ window.DATOS = {
     titulo: ["Te esperamos", "en el Buceo"],
     texto: "Vení a comer al local o pedí para llevar: armás el pedido acá y te lo tenemos listo.",
     tarjetas: [
-      { titulo: "Comé en el local", texto: "Mahoma 4496, Buceo.", foto: U("photo-1628840042765-356cda07504e") },
-      { titulo: "Pedí para llevar", texto: "Armá tu pedido y mandalo por WhatsApp.", foto: U("photo-1630384060421-cb20d0e0649d") },
+      { titulo: "Comé en el local", texto: "Mahoma 4496, Buceo.", foto: U("photo-1593560708920-61dd98c46a4e", 900) },
+      { titulo: "Pedí para llevar", texto: "Armá tu pedido y mandalo por WhatsApp.", foto: U("photo-1630384060421-cb20d0e0649d", 900) },
     ],
   },
 
@@ -97,8 +119,8 @@ window.DATOS = {
   numeros: [
     { valor: "5.0", texto: "estrellas en Google" },
     { valor: "48", texto: "opiniones en Google" },
+    { valor: "35+", texto: "opciones en la carta" },
     { valor: "19:30", texto: "abrimos" },
-    { valor: "Pronto", texto: "llega la parrilla" },
   ],
 
   resenas: [],   // solo reseñas reales, con permiso del local
